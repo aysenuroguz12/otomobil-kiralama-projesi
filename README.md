@@ -13,11 +13,15 @@ Bu proje, C# programlama dili kullanılarak geliştirilmiş, konsol veya form ta
 * **Platform:** .NET Framework / .NET Core
 * **Veri Yönetimi:** (Nesne Yönelimli Programlama - OOP / Listeler / Veritabanı freebase)
 
-## ⚙️ Nasıl Çalıştırılır?
+##  Nasıl Çalıştırılır?
 Projeyi kendi bilgisayarınızda çalıştırmak için şu adımları izleyebilirsiniz:
 
 1. Projeyi bilgisayarınıza klonlayın veya indirin.
 2. Projeyi **Visual Studio** programı ile açın.
 3. Çözüm (Solution) dosyasını (`.sln`) açarak projeyi yükleyin.
 4. Programı çalıştırmak için üst menüden **Start (Başlat)** butonuna basın veya klodan `F5` tuşunu kullanın.
+
+5. ##  Geliştirici
+
+*   **GitHub:** [@aysenurogur12](https://github.com/aysenurogur12)
 
