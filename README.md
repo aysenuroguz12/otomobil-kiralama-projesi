@@ -11,7 +11,7 @@ Bu proje, C# programlama dili kullanılarak geliştirilmiş, konsol veya form ta
 ##  Kullanılan Teknolojiler
 * **Dil:** C#
 * **Platform:** .NET Framework / .NET Core
-* **Veri Yönetimi:** (Nesne Yönelimli Programlama - OOP / Listeler / Veritabanı kullandıysan buraya ekleyebilirsin, örn: SQL Server)
+* **Veri Yönetimi:** (Nesne Yönelimli Programlama - OOP / Listeler / Veritabanı freebase)
 
 ## ⚙️ Nasıl Çalıştırılır?
 Projeyi kendi bilgisayarınızda çalıştırmak için şu adımları izleyebilirsiniz:
