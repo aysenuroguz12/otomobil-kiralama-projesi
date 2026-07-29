@@ -1,4 +1,4 @@
-# C# Oto Kiralama Otomasyonu 🚗
+# C# Otomobil Kiralama Otomasyonu 
 
 Bu proje, C# programlama dili kullanılarak geliştirilmiş, konsol veya form tabanlı (kullandığın altyapıya göre düzenleyebilirsin) bir araç kiralama yönetim sistemidir. Araç, müşteri ve kiralama işlemlerini organize etmek amacıyla tasarlanmıştır.
 
