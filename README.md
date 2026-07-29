@@ -23,5 +23,5 @@ Projeyi kendi bilgisayarınızda çalıştırmak için şu adımları izleyebili
 
 5. ##  Geliştirici
 
-*   **GitHub:** [@aysenurogur12](https://github.com/aysenurogur12)
+*   **GitHub:** [@aysenuroguz12](https://github.com/aysenuroguz12)
 
