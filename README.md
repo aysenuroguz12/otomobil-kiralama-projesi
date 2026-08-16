@@ -43,6 +43,41 @@ Katkıda Bulunma
 4. Uzak depoya gönderin: `git push -u origin feature/isim`.
 5. Pull request açın ve değişiklikleri açıklayın.
 
+## Konfigürasyon Örneği
+
+Projede kullanılan hassas bilgiler (ör. Firebase `AuthSecret` ve `BasePath`) kaynak kodunda yer almamalıdır. Aşağıdaki örnek `.env.example` dosyasında hangi environment değişkenlerinin gerektiği gösterilmiştir. Gerçek değerleri `.env` veya güvenli bir gizli yönetim sistemi içinde saklayın.
+
+Örnek `.env.example` içeriği:
+
+```
+FIREBASE_AUTH_SECRET=
+FIREBASE_BASE_PATH=
+```
+
+Uygulamada bu değerleri okumak için kendi yükleme/konfigürasyon yönteminizi kullanın.
+
+## Ekran Görüntüleri
+
+Projeye ait örnek ekran görüntüleri `docs/screenshots/` dizinine eklenebilir. Şu anda yer tutucu olarak bu alanın var olduğunu belirtin veya kendi ekran görüntülerinizi ekleyin.
+
+## Lisans
+
+Bu proje için varsayılan lisans eklenmemiştir. Aşağıda MIT lisansının kısa bir açıklaması yer alır; uygun bulursanız proje köküne `LICENSE` dosyası olarak ekleyin.
+
+Bu depoya MIT lisansı eklendi — detaylar için `LICENSE` dosyasına bakın.
+
+## .gitignore önerisi
+
+Gizli bilgileri yanlışlıkla commitlememek için `.gitignore` dosyanıza aşağıdakileri eklemeniz önerilir:
+
+```
+.env
+bin/
+obj/
+.vs/
+*.user
+```
+
 Sık Karşılaşılan Sorunlar
 
 - Derleme hatası alırsanız NuGet paketlerini restore edin ve hedef framework sürümünü kontrol edin.
