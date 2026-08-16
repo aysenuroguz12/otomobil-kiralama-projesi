@@ -78,7 +78,7 @@
             button1.TabIndex = 24;
             button1.Text = "Ödeme yap";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
@@ -369,7 +369,7 @@
             this.button2.TabIndex = 25;
             this.button2.Text = "Kaydet";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.button3_Click);
             // 
             // button3
             // 
@@ -389,7 +389,7 @@
             this.button4.TabIndex = 27;
             this.button4.Text = "sonraki sayfaya git ";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.button5_Click);
             // 
             // button5
             // 

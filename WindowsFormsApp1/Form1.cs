@@ -2,22 +2,11 @@
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
-using Google.Type;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace WindowsFormsApp1
-   
-
-
 {
     public partial class Form1 : Form
     {
@@ -25,16 +14,14 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
         IFirebaseConfig fc = new FirebaseConfig
         {
             AuthSecret = "7py1re49571VUbXGqPbrsyU1EWGIQFaLC9L8KZM0",
             BasePath = "https://otokiralama1-8a758-default-rtdb.firebaseio.com/"
         };
-        FirebaseClient Client;
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
+        IFirebaseClient Client;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -42,88 +29,80 @@ namespace WindowsFormsApp1
             {
                 Client = new FireSharp.FirebaseClient(fc);
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Veritabanına bağlantı hatası oluştu!");
+                MessageBox.Show("Veritabanına bağlantı hatası oluştu! Detay: " + ex.Message,
+                    "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            // Şifre karakteri gizleme burada bir kere ayarlanır
+            textBox2.UseSystemPasswordChar = true;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+        private void label1_Click(object sender, EventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            string kullanıcıad = textBox1.Text;
+            string kullaniciAd = textBox1.Text.Trim();
             string sifre = textBox2.Text;
 
-            string kullanıcıad1 = "otokiralama";
-            string sifre1 = "1234";
-            if (kullanıcıad == kullanıcıad1 && sifre == sifre1)
+            if (string.IsNullOrEmpty(kullaniciAd) || string.IsNullOrEmpty(sifre))
             {
-                MessageBox.Show("Giriş başarılı");
+                MessageBox.Show("Lütfen kullanıcı adı ve şifre giriniz.", "Uyarı",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            const string kullaniciAd1 = "otokiralama";
+            const string sifre1 = "1234";
+
+            if (kullaniciAd == kullaniciAd1 && sifre == sifre1)
+            {
+                MessageBox.Show("Giriş başarılı", "Bilgi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 Form2 frm = new Form2();
                 frm.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Tekrar deneyiniz");
+                MessageBox.Show("Tekrar deneyiniz", "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox2.Clear();
-
+                return; // Yanlış girişte Firebase'e yazmaya gerek yok
             }
 
-            try
+            // Giriş bilgisini logla / kaydet (opsiyonel)
+            if (Client != null)
             {
-                var data = new
+                try
                 {
-                    KullanıcıAd = textBox1.Text,
-                    Sifre = textBox2.Text
-                };
+                    var data = new
+                    {
+                        KullaniciAd = kullaniciAd,
+                        SonGiris = DateTime.Now.ToString()
+                    };
 
-                var set = Client.Set("ototbl/" + textBox1.Text, data);
-
-               
+                    await Client.SetAsync("ototbl/" + kullaniciAd, data);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Firebase veri ekleme hatası! Detay: " + ex.Message,
+                        "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch
-            {
-                MessageBox.Show("Firebase veri ekleme hatası!");
-            }
-        }
-
-        
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            textBox2.UseSystemPasswordChar = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var data = new
-            {
-               
-            };
-
-            try
-            {
-                SetResponse response = Client.Set("ototbl/" + textBox1.Text, data);
-                MessageBox.Show("Veriler Firebase'e eklendi!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hata: " + ex.Message);
-            }
+            // Bu butonun ne kaydetmesi gerektiğini netleştirince
+            // buraya gerçek alanlarla dolu bir "data" objesi ekleyeceğiz.
+            MessageBox.Show("Bu butonun işlevini birlikte tanımlayalım.",
+                "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        }
-         
+    }
 }
-        
-    
-
