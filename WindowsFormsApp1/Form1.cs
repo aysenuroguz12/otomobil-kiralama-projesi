@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
 
         IFirebaseClient Client;
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Giriş başarılı", "Bilgi",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Form2 frm = new Form2();
+                MainForm frm = new MainForm();
                 frm.Show();
                 this.Hide();
             }

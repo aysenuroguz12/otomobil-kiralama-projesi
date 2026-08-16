@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
 {
    
 
-    public partial class Form4 : Form
+    public partial class RentalForm : Form
     {
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -29,13 +29,13 @@ namespace WindowsFormsApp1
         private readonly int _fiyat;
 
         // Designer'ın kullanması için parametresiz constructor (tasarım zamanı)
-        public Form4()
+        public RentalForm()
         {
             InitializeComponent();
         }
 
         // Form3'ten gerçek verilerle çağrılan constructor
-        public Form4(string marka, string model, int gun, int fiyat) : this()
+        public RentalForm(string marka, string model, int gun, int fiyat) : this()
         {
             _marka = marka;
             _model = model;
@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
             _fiyat = fiyat;
         }
 
-        private void Form4_Load(object sender, EventArgs e)
+        private void RentalForm_Load(object sender, EventArgs e)
         {
             try
             {
@@ -166,7 +166,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Ödeme başarıyla gerçekleştirildi. İşlem ID: " + response.Result.name,
                         "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Form5 form5 = new Form5();
+                    PaymentForm form5 = new PaymentForm();
                     form5.ShowDialog();
                     this.Close(); // Hide değil Close - artık bu forma dönülmeyecek
                 }
@@ -190,7 +190,7 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            CarForm form3 = new CarForm();
             form3.Show();
             this.Close();
         }

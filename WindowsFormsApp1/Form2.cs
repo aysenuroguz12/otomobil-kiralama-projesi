@@ -3,14 +3,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form2 : Form
+    public partial class MainForm : Form
     {
-        public Form2()
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             // ComboBox'lar burada, sadece bir kez dolduruluyor
             comboBox1.Items.Clear();
@@ -41,21 +41,21 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
+            CarForm f3 = new CarForm();
             f3.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
+            RentalForm form4 = new RentalForm();
             form4.Show();
             this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
+            LoginForm f1 = new LoginForm();
             f1.Show();
             this.Hide();
         }

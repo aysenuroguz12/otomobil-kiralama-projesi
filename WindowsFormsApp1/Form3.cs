@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form3 : Form
+    public partial class CarForm : Form
     {
         public class KiralamaKaydi
         {
@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
             public int Fiyat { get; set; }
         }
 
-        public Form3()
+        public CarForm()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
 
         IFirebaseClient Client;
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void CarForm_Load(object sender, EventArgs e)
         {
             try
             {
@@ -212,14 +212,14 @@ namespace WindowsFormsApp1
             int fiyat = HesaplaFiyat(gun);
 
             // Artık veriler Form4'e gerçekten aktarılıyor
-            Form4 f4 = new Form4(marka, model, gun, fiyat);
+            RentalForm f4 = new RentalForm(marka, model, gun, fiyat);
             f4.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            MainForm form2 = new MainForm();
             form2.Show();
             this.Hide();
         }

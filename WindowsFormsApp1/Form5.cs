@@ -7,18 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static WindowsFormsApp1.Form5;
+using static WindowsFormsApp1.PaymentForm;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form5 : Form
+    public partial class PaymentForm : Form
     {
-        public Form5()
+        public PaymentForm()
         {
             InitializeComponent();
         }
 
-        private void Form6_Load(object sender, EventArgs e)
+        private void PaymentForm_Load(object sender, EventArgs e)
         { 
         }
 
